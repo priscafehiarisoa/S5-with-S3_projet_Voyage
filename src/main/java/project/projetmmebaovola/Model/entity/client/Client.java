@@ -6,6 +6,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 import java.time.LocalDate;
+import java.time.Period;
 
 @Entity
 public class Client {
@@ -15,6 +16,15 @@ public class Client {
     private String nomClient;
     private LocalDate dateNaissance;
     private  String sexe;
+    private int etat=0;
+
+    public int getEtat() {
+        return etat;
+    }
+
+    public void setEtat(int etat) {
+        this.etat = etat;
+    }
 
     public LocalDate getDateNaissance() {
         return dateNaissance;
@@ -40,4 +50,10 @@ public class Client {
         this.sexe=sexe;
     }
     public  String getSexe(){return sexe;}
+
+    public int getAge(){
+        Period period = Period.between(getDateNaissance(), LocalDate.now());
+        int years = period.getYears();
+        return years;
+    }
 }

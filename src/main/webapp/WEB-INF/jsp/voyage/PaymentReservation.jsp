@@ -16,16 +16,17 @@
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">Reservation n* <%=reservationVoyage.getId()%> </h4>
-            <p>client : <%=reservationVoyage.getNomClient()%></p>
+            <p>client : <%=reservationVoyage.getClient().getNomClient()%></p>
             <div class="form-group">
-                <form >
+                <form  action="${pageContext.request.contextPath}/payerReservation" method="post">
                     <label>payement Reservation </label>
                     <input type="hidden" class="form-control " name="id" required value="<%=reservationVoyage.getId()%>">
                     <input type="text" class="form-control " name="payementReservation" required value="<%=montantAPayer%>">
                     <br>
+                    <input type="submit" name="valider">
+
                 </form>
-                <input type="submit" name="valider">
-               
+
             </div>
         </div>
     </div>

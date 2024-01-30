@@ -307,12 +307,15 @@ public class VoyageController {
         List<Voyage> list= voyageRepository.findAll();
         System.out.println(model.getAttribute("errors"));
         model.addAttribute("voyage",list);
+        model.addAttribute("client",clientRepository.getValidClient());
         return "voyage/FormReservationVoyage";
     }
     @GetMapping("/getListeReservation")
     public String getListeReservation(Model model){
-        List<ReservationVoyage> reservationVoyages=reservationVoyageRepository.findAll();
+        List<ReservationVoyage> reservationVoyages=reservationVoyageRepository.getReservationVoyageByEtat(0);
+        List<ReservationVoyage> reservationVoyagespaye=reservationVoyageRepository.getReservationVoyageByEtat(10);
         model.addAttribute("reservation",reservationVoyages);
+        model.addAttribute("reservationPaye",reservationVoyagespaye);
         return "voyage/listeReservation";
     }
 
@@ -332,6 +335,9 @@ public class VoyageController {
             // effectuer la vente
             VenteVoyage voyage=new VenteVoyage(reservationVoyageOptional.get(),payement);
             venteVoyageRepository.save(voyage);
+            ReservationVoyage reservationVoyage=reservationVoyageOptional.get();
+            reservationVoyage.setEtat(10);
+            reservationVoyageRepository.save(reservationVoyage);
         }
         String returntype="/getListeReservation";
         final RedirectView redirectView = new RedirectView(returntype, true);
@@ -381,7 +387,7 @@ public class VoyageController {
                     //todo mila amboarina le client ty atao optional
                     Client client=clientRepository.findById(nomClient).get();
                     ReservationVoyage reservationVoyage1= new ReservationVoyage(nombreReservation,voyage,client);
-
+                    reservationVoyage1.setDateReservation(LocalDate.now());
                     reservationVoyage1.setClient(client);
                     reservationVoyageRepository.save(reservationVoyage1);
                 }

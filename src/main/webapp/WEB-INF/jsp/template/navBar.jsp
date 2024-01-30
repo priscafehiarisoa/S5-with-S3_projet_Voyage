@@ -84,6 +84,22 @@
           </ul>
         </div>
       </li>
+
+      <li class="nav-item nav-category">Client</li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#client" aria-expanded="false"
+           aria-controls="client">
+          <i class="menu-icon mdi mdi-emoticon-happy"></i>
+          <span class="menu-title">Client</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="client">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/formClient">ajouter</a></li>
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/clients">liste</a></li>
+          </ul>
+        </div>
+      </li>
     </ul>
   </nav>
 

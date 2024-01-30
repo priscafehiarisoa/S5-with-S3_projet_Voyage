@@ -9,4 +9,6 @@ public class StatistiqueController {
     public String getStatistique(){
         return "statistique/statistiqueVente";
     }
+
+
 }

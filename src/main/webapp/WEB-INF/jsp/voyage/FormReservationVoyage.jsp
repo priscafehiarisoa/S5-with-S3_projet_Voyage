@@ -69,10 +69,7 @@
                              <option value=<%=clients.get(i).getId() %>><%=clients.get(i).getNomClient()%></option>
                              <%}%>
                          </select>
-
                     </div>
-
-
                     <button type="submit" class="btn btn-primary me-2">Valider</button>
             </form>
         </div>
