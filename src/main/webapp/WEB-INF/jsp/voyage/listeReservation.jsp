@@ -29,13 +29,16 @@ Created by IntelliJ IDEA.
             <h4 class="card-title">Reservation </h4>
             <div class="form-group">
                 <form action="${pageContext.request.contextPath}/rechercheReservation" method="post">
-                    <label>rechercheReservation </label>
-                    <input type="text" class="form-control " name="rechercheReservation" required>
-                    <br>
+                    <div class="row">
+                        <div class=" col-10">
+                            <input type="text" id="idEtudiant3" class="form-control p-3" height="50px" name="rechercheReservation" required placeholder="rechercher un voyage particulier ">
+                        </div>
+                        <div class=" col-2">
+                            <button class="btn btn-primary"> <i class="mdi mdi-table-search"></i></button>
+                        </div>
+                    </div>
                 </form>
-                <input type="submit" name="recherche">
-
-                <div class="table-responsive">
+                <div class="table-responsive mt-5">
                     <table border="1" class="table">
                         <tr>
 
@@ -59,7 +62,7 @@ Created by IntelliJ IDEA.
                             <td><%=reservationVoyage.getNombreRervation()%></td>
                             <td><%=reservationVoyage.getDateReservation()%></td>
                             <td><%=reservationVoyage.getClient().getNomClient()%></td>
-                            <td><a href="getPagePayerReservation/<%=reservationVoyage.getId()%>" >Payer</a></td>
+                            <td><a href="getPagePayerReservation/<%=reservationVoyage.getId()%>" class="btn btn-success"><i class="mdi mdi-cash mt-3 mx-2"></i> <i class="mb-4">payer</i></a></td>
 
                         </tr>
                         <% } %>
@@ -69,9 +72,9 @@ Created by IntelliJ IDEA.
                 </div>
 
                 <br>
-                <h4 class="card-title">Reservation payés </h4>
+                <h4 class="card-title mt-5">Reservation payés </h4>
 
-                <div class="table-responsive">
+                <div class="table-responsive mt-5">
                     <table border="1" class="table">
                         <tr>
 
@@ -94,7 +97,6 @@ Created by IntelliJ IDEA.
                             <td><%=reservationVoyage.getNombreRervation()%></td>
                             <td><%=reservationVoyage.getDateReservation()%></td>
                             <td><%=reservationVoyage.getClient().getNomClient()%></td>
-<%--                            <td><a href="getPagePayerReservation/<%=reservationVoyage.getId()%>" >Payer</a></td>--%>
 
                         </tr>
                         <% } %>

@@ -110,7 +110,7 @@ public class Bouquets {
     public void saveBouquet(List<Integer> bouquetActiviteList, BouquetsRepository bouquetsRepository, BouquetActiviteRepository bouquetActiviteRepository,ActiviteRepository activiteRepository) throws Exception {
         bouquetsRepository.save(this);
         List<Bouquet_activite> bouquetActivites=this.createActiviteForBouquet(bouquetActiviteList,activiteRepository);
-        bouquetActiviteRepository.saveAll(bouquetActivites);
+//        bouquetActiviteRepository.saveAll(bouquetActivites);
     }
 
 //    public void setListBouquetActivite(BouquetActiviteRepository bouquetActiviteRepository){

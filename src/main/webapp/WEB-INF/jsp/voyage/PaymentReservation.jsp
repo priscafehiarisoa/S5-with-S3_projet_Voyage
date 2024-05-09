@@ -23,7 +23,7 @@
                     <input type="hidden" class="form-control " name="id" required value="<%=reservationVoyage.getId()%>">
                     <input type="text" class="form-control " name="payementReservation" required value="<%=montantAPayer%>">
                     <br>
-                    <input type="submit" name="valider">
+                    <input type="submit" class="btn btn-primary" value="valider">
 
                 </form>
 

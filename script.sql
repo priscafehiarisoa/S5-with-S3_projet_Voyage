@@ -54,11 +54,11 @@ group by maindoeuvre.voyage_id, tarifVoyage.prixActivite
 
 -- calcul des depenses du voyage
 create view v_depenses_voyage as
-    select salairePersonnel,voyage_id,prixActivite,(date_fin_voyage-date_debutvoyage)as joursVoyage, v.prix_unitaire_voyage
-    from  prix_main_d_oeuvres join public.voyage v on v.id = prix_main_d_oeuvres.voyage_id
+    select coalesce(salairePersonnel,0),voyage_id,prixActivite,coalesce((date_fin_voyage-date_debutvoyage),0)as joursVoyage, v.prix_unitaire_voyage
+    from  prix_main_d_oeuvres left join  public.voyage v on v.id = prix_main_d_oeuvres.voyage_id
 
 
-select prix_unitaire_voyage-(salairePersonnel+prixActivite),voyage_id,prix_unitaire_voyage,salairePersonnel+prixActivite from v_depenses_voyage
+-- select prix_unitaire_voyage-(salairePersonnel+prixActivite),voyage_id,prix_unitaire_voyage,salairePersonnel+prixActivite from v_depenses_voyage
 create view v_quantite_all_activite as select type_mouvement,activite_id,quantite_mouvement from mouvement_stock_activite
 union all
 select 1,id,0 from activite

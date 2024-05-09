@@ -90,4 +90,13 @@ public class VDepensesVoyage {
         }
         return hashMaps;
     }
+
+    public static List<HashMap<String,Object>> getAllbenefices(VDepensesVoyageRepository vDepensesVoyageRepository,VoyageRepository voyageRepository, VoyageActiviteRepository voyageActiviteRepository){
+        List<VDepensesVoyage> depensesVoyages=vDepensesVoyageRepository.findAll();
+        List<HashMap<String,Object>> hashMaps=new ArrayList<>();
+        for (int i = 0; i < depensesVoyages.size(); i++) {
+            hashMaps.add(depensesVoyages.get(i).getObjectFromDepenses(voyageRepository,voyageActiviteRepository));
+        }
+        return hashMaps;
+    }
 }

@@ -279,7 +279,7 @@ public class VoyageController {
 
 
     @PostMapping("/searchvoyage")
-    public String getSerach(@RequestParam("recherche") String recherche,Model model){
+    public String getSearch(@RequestParam("recherche") String recherche,Model model){
         List<Recherche> voyages= rechercheRepository.searchvoyage(recherche);
 
         model.addAttribute("voyage",voyages);

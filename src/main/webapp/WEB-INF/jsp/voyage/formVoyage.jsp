@@ -30,18 +30,32 @@
     }
 %>
 
+    <div class="row col-md-12 grid-margin stretch-card shadow-sm " style="background-color: #fff ; border-radius: 12px; margin-left: 2%; width: 97%">
+        <div class="col-9 mt-3">
+            <h3 class="text-secondary">Voyage</h3>
+        </div>
+        <div class="col-3 mt-2" style="font-size: 20px">
+            <nav aria-label="breadcrumb" >
+                <ol class="breadcrumb" style="border:none;">
+                    <li class="breadcrumb-item"><a href="/" style="font-size: 16px" ><i class="mdi mdi-home"></i></a></li>
+                    <li class="breadcrumb-item active" aria-current="page" style="font-size: 16px">Ajouter</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+
 <div class="col-md-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <%if(request.getAttribute("modifVoyage")!=null){%>"/updateVoyagePost"<%} else {%>/newVoyage"  <%}%>
-            <h4 class="card-title"><%if(request.getAttribute("modifVoyage")!=null){%>Modifier un voyage <%} else {%> Ajouter un voyage <%}%></h4>
+            <h4 class="mb-5" style="color: #2F4858"><%if(request.getAttribute("modifVoyage")!=null){%>Modifier un voyage <%} else {%> Ajouter un voyage <%}%></h4>
             <form  class="forms-sample" method="post"  action="<%if(request.getAttribute("modifVoyage")!=null){%>/updateVoyagePost<%} else {%>/newVoyage"  <%}%> >
                 <% if((request.getAttribute("modifVoyage")!=null)) {%>
                 <input type="hidden" name="id" value=<%=modifVoyage.getId()%>>
                 <%}%>
 <%--                date debut --%>
                 <div class="form-group">
-                    <label for="idEtudiant">date debut du voyage </label>
+                    <label for="idEtudiant">Date de début du voyage </label>
                     <input type="date" id="idEtudiant" class="form-control" name="dateDebutvoyage" required
                            <% if((request.getAttribute("modifVoyage")!=null)) {%>
                             value=<%=modifVoyage.getDateDebutvoyage()%>
@@ -50,7 +64,7 @@
                 </div>
 <%--    date fin --%>
     <div class="form-group">
-        <label for="idEtudiant">date Fin du voyage </label>
+        <label for="idEtudiant">Date de fin du voyage </label>
         <input type="date" id="q" class="form-control" name="dateFinVoyage" required
             <% if((request.getAttribute("modifVoyage")!=null)) {%>
                value=<%=modifVoyage.getDateFinVoyage()%>
@@ -60,7 +74,7 @@
 
     <%--    prix Unitaire --%>
     <div class="form-group">
-        <label for="idEtudiant">prix unitaire voyage </label>
+        <label for="idEtudiant" ><span class="text-capitalize">  prix </span>unitaire voyage </label>
         <input type="number" id="3" class="form-control" name="prixUnitaireVoyage" required
             <% if((request.getAttribute("modifVoyage")!=null)) {%>
                value=<%=modifVoyage.getPrixUnitaireVoyage()%>
@@ -70,7 +84,7 @@
 
 <%--    type lieu list --%>
     <div class="form-group">
-        <label for="idEtudiant">types des lieux </label>
+        <label for="idEtudiant"><span class="text-capitalize">  Categorie </span> de lieux </label>
         <select
                 name="type"
                 class="form-control"
@@ -94,7 +108,7 @@
     <%--    type de durrée d'activité --%>
     <div class="form-group ">
         <label >choisir le type de durée  </label>
-        <div class="form-check">
+        <div class="form-group">
             <label class="" ></label>
             <select name="typedure" id="" class="form-control"
                     <% if((request.getAttribute("modifVoyage")!=null)){%>
@@ -109,9 +123,9 @@
     <%--    bouquets liste --%>
     <div class="form-group ">
         <label >Bouquets </label>
-        <div class="m-5 row d-inline-flex mx-5">
+<%--        <div class="m-5 row d-inline-flex mx-5">--%>
 
-            <select name="bouquets" id=""
+            <select name="bouquets" id="" class="form-control lg"
                     <% if((request.getAttribute("modifVoyage")!=null)) {%>
                         value=<%=modifVoyage.getBouquets().getId()%>
                     <%}%>
@@ -126,7 +140,7 @@
 <%--                <label class="form-check-label" for="bouquet<%= i %>"></label>--%>
 <%--            </div>--%>
 
-        </div>
+<%--        </div>--%>
     </div>
     <%--    liste des activités  --%>
     <div class="form-group ">

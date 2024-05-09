@@ -18,22 +18,39 @@
 
 <jsp:include page="../template/header.jsp" />
 
+
+<div class="row col-md-12 grid-margin stretch-card shadow-sm " style="background-color: #fff ; border-radius: 12px; margin-left: 2%; width: 97%">
+    <div class="col-9 mt-3">
+        <h3 class="text-secondary">Voyage</h3>
+    </div>
+    <div class="col-3 mt-2" style="font-size: 20px">
+        <nav aria-label="breadcrumb" >
+            <ol class="breadcrumb" style="border:none;">
+                <li class="breadcrumb-item"><a href="/" style="font-size: 16px" ><i class="mdi mdi-home"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page" style="font-size: 16px" >Liste</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
             <h4 class="card-title">liste des voyages </h4>
-            <p class="card-description">
-                Add class <code>.table</code>
-            </p>
-            <%--                description de l'activité --%>
-            <div class="form-group">
-                <form action="${pageContext.request.contextPath}/searchvoyage" method="post">
-                    <label for="idEtudiant3">recherche </label>
-                    <input type="text" id="idEtudiant3" class="form-control " name="recherche" required> </input>
-                    <br>
-                </form>
 
+            <%--                description de l'activité --%>
+            <form action="${pageContext.request.contextPath}/searchvoyage" method="post">
+
+            <div class="row">
+                    <div class=" col-10">
+                        <input type="text" id="idEtudiant3" class="form-control p-3" height="50px" name="recherche" required placeholder="rechercher un voyage particulier ">
+                    </div>
+                    <div class=" col-2">
+                        <button class="btn btn-primary"> <i class="mdi mdi-table-search"></i></button>
+                    </div>
             </div>
+            </form>
+
 
 
             <div class="table-responsive">
@@ -71,8 +88,8 @@
                         </ul>
                     </td>
                     <td><%=voyage.getPrixUnitaireVoyage()%></td>
-                    <td><a href="/updateVoyage/<%=voyage.getId()%>">modifier</a></td>
-                    <td><a href="/updateVoyage/<%=voyage.getId()%>">supprimer</a></td>
+                    <td><a href="/updateVoyage/<%=voyage.getId()%>" class="btn btn-dark"><i class="mdi mdi-pen"></i></a></td>
+                    <td><a href="/updateVoyage/<%=voyage.getId()%>" class="btn btn-warning"> <i class="mdi mdi-trash-can"></i></a></td>
                 </tr>
                 <% } %>
                 </tbody>

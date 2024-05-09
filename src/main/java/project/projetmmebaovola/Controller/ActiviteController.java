@@ -71,23 +71,23 @@ public class ActiviteController {
         return "activite/formStockActivite";
     }
 
-    @PostMapping("/submitStockActivite")
-    public Object submitStockActivite(@ModelAttribute StockActivite stockActivite, Model model){
-        try{
-            // creer un nouveau stock Activite
-
-            StockActivite stockActivite1=new StockActivite(stockActivite.getNombreStock(),stockActivite.getActivite());
-            stockActiviteRepository.save(stockActivite1);
-        }
-        catch (Exception e){
-            model.addAttribute("error",e.getMessage());
-            List<Activite> list= activiteRepository.getActiveActivite();
-            model.addAttribute("activite",list);
-            return "activite/formStockActivite";
-        }
-        String redirection="/getFormStockActivite";
-        return new RedirectView(redirection, true);
-    }
+//    @PostMapping("/submitStockActivite")
+//    public Object submitStockActivite(@ModelAttribute StockActivite stockActivite, Model model){
+//        try{
+//            // creer un nouveau stock Activite
+//
+//            StockActivite stockActivite1=new StockActivite(stockActivite.getNombreStock(),stockActivite.getActivite());
+//            stockActiviteRepository.save(stockActivite1);
+//        }
+//        catch (Exception e){
+//            model.addAttribute("error",e.getMessage());
+//            List<Activite> list= activiteRepository.getActiveActivite();
+//            model.addAttribute("activite",list);
+//            return "activite/formStockActivite";
+//        }
+//        String redirection="/getFormStockActivite";
+//        return new RedirectView(redirection, true);
+//    }
 
     @PostMapping("/submitMouvementStockActivite")
     public Object submitMouvementStockActivite(Model model,@RequestParam("nombreStock") int nombreStock,@RequestParam("activite") int idActivite) {

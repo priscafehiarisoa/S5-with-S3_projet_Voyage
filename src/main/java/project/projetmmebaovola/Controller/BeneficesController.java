@@ -37,7 +37,8 @@ public class BeneficesController {
         return "benefices/rechercheRangeBenefice";
     }
     @GetMapping("/getBenefice")
-    public String getBeneficePage(){
+    public String getBeneficePage(Model model){
+        model.addAttribute("benefices", VDepensesVoyage.getAllbenefices(vDepensesVoyageRepository,voyageRepository,voyageActiviteRepository));
         return "benefices/rechercheRangeBenefice";
     }
 

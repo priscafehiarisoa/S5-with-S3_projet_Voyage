@@ -47,7 +47,7 @@
                 <div class="form-group ">
                     <label >choisir un voyage </label>
                     <div class="form-check">
-                        <label class="form-check-label" ></label>
+                        <label for=""></label>
                         <select name="idVoyage" id="" class="form-control" >
                             <%for (int i = 0; i < voyageList.size(); i++) {%>
                             <option value=<%=voyageList.get(i).getId()%>><%=voyageList.get(i).getId()%>|debut: <%=voyageList.get(i).getDateDebutvoyage()%> fin: <%=voyageList.get(i).getDateFinVoyage()%> | <%=voyageList.get(i).getBouquets().getNomBouquet()%></option>
@@ -63,8 +63,8 @@
                     </div>
                     <%--                description de l'activité --%>
                     <div class="form-group">
-                        <label>client</label>
-                         <select name="nomClient">
+                        <label for="client">client</label>
+                         <select name="nomClient" id="client" class="form-control">
                              <%for (int i = 0; i <clients .size(); i++) {%>
                              <option value=<%=clients.get(i).getId() %>><%=clients.get(i).getNomClient()%></option>
                              <%}%>

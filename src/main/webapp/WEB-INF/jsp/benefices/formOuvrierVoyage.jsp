@@ -27,7 +27,7 @@
 
   <div class="card">
     <div class="card-body">
-      <h4 class="card-title"><%if (request.getAttribute("modifActivite")!=null){ %>Ajouter un stock d'activité<%} else {%>Modifier une activite<%}%> </h4>
+      <h4 class="card-title">Assigner une responsabilité à un employé pour un voyage</h4>
       <%--alert --%>
       <% if(request.getAttribute("error")!=null){%>
       <div class="alert alert-danger" role="alert">

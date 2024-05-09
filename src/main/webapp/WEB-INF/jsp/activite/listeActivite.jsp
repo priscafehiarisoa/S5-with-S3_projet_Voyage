@@ -60,9 +60,8 @@
                 <%}%>
               </ul>
             </td>
-            <td><a href="/getUpdateActivitepage/<%=activite1.getId()%>">modifier</a></td>
-            <td><a href="/deleteActivite/<%=activite1.getId()%>">supprimer</a></td>
-
+            <td><a href="/getUpdateActivitepage/<%=activite1.getId()%>" class="btn btn-dark"><i class="mdi mdi-pen"></i></a></td>
+            <td><a  href="/deleteActivite/<%=activite1.getId()%>" class="btn btn-warning"> <i class="mdi mdi-trash-can"></i></a></td>
 
           </tr>
           <% } %>
@@ -75,32 +74,5 @@
   </div>
 </div>
 
-<%--<div class="col-lg-12 grid-margin stretch-card">--%>
-<%--  <div class="card">--%>
-<%--    <div class="card-body">--%>
-<%--      <h4 class="card-title">Liste des bouquets</h4>--%>
-<%--      <div class="card-list">--%>
-<%--        <% for (Activite activite1: activites) { %>--%>
-<%--        <div class="card-item">--%>
-<%--          <div class="card-header">--%>
-<%--            <h5><%=activite1.getNomActivite()%></h5>--%>
-<%--            <p><%=activite1.getDescription()%></p>--%>
-<%--          </div>--%>
-<%--          <div class="card-content">--%>
-<%--            <p><strong>Nom de l'activité:</strong> <%=activite1.getNomActivite()%></p>--%>
-<%--            <p><strong>Description:</strong> <%=activite1.getDescription()%></p>--%>
-<%--            <p><strong>Catégories d'activité:</strong></p>--%>
-<%--            <ul>--%>
-<%--              <% for (int i = 0; i < activite1.getListeCategorieActivite().size(); i++) {%>--%>
-<%--              <li><%=activite1.getListeCategorieActivite().get(i).getNomCAtegorie()%></li>--%>
-<%--              <%}%>--%>
-<%--            </ul>--%>
-<%--          </div>--%>
-<%--        </div>--%>
-<%--        <% } %>--%>
-<%--      </div>--%>
-<%--    </div>--%>
-<%--  </div>--%>
-<%--</div>--%>
 <jsp:include page="../template/footer.jsp" />
 

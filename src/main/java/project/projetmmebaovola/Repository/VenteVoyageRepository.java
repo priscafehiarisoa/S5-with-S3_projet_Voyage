@@ -21,5 +21,5 @@ public interface VenteVoyageRepository extends JpaRepository<VenteVoyage, Intege
             "          FROM (SELECT 'femme' AS sexe UNION SELECT 'homme') AS m)" +
             "     ) AS subquery_alias " +
             "GROUP BY sexe",nativeQuery = true)
-    List<Object[]> getStatistique();
+    List<Object[]> getStatistique(int id);
 }

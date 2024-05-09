@@ -53,7 +53,7 @@
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#personnel" aria-expanded="false"
            aria-controls="personnel">
-          <i class="menu-icon mdi mdi-map-check-outline"></i>
+          <i class="menu-icon mdi mdi-account"></i>
           <span class="menu-title">Personnel</span>
           <i class="menu-arrow"></i>
         </a>
@@ -70,7 +70,7 @@
       <li class="nav-item">
         <a class="nav-link" data-bs-toggle="collapse" href="#activite" aria-expanded="false"
            aria-controls="activite">
-          <i class="menu-icon mdi mdi-cards-variant"></i>
+          <i class="menu-icon mdi mdi-gamepad"></i>
           <span class="menu-title">Activités</span>
           <i class="menu-arrow"></i>
         </a>
@@ -97,6 +97,21 @@
           <ul class="nav flex-column sub-menu">
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/formClient">ajouter</a></li>
             <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/clients">liste</a></li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item nav-category">Statistique</li>
+      <li class="nav-item">
+        <a class="nav-link" data-bs-toggle="collapse" href="#statistique" aria-expanded="false"
+           aria-controls="statistique">
+          <i class="menu-icon mdi mdi-settings"></i>
+          <span class="menu-title">Statistique</span>
+          <i class="menu-arrow"></i>
+        </a>
+        <div class="collapse" id="statistique">
+          <ul class="nav flex-column sub-menu">
+            <li class="nav-item"><a class="nav-link" href="${pageContext.request.contextPath}/getStatistique">statistique</a></li>
           </ul>
         </div>
       </li>

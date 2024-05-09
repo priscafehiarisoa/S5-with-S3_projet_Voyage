@@ -92,7 +92,7 @@
           </div>
         </div>
 
-        <button type="submit" class="btn btn-primary me-2">Valider</button>
+        <button type="submit" class="btn btn-dark me-2">Valider</button>
       </form>
     </div>
   </div>

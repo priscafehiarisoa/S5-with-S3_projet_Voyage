@@ -40,6 +40,7 @@
               <th>fonction</th>
               <th>debut</th>
               <th>multiplicateur salaire</th>
+              <th>-</th>
             </tr>
             <tbody>
 
@@ -48,7 +49,10 @@
               <td><%=personnel.getId()%></td>
               <td><%=personnel.getNomFonction()%></td>
               <td><%=personnel.getDebutIntervalleAnnee()%></td>
-              <td><a href="/updateFormFonction/<%=personnel.getId()%>">modifier</a></td>
+              <td><%=personnel.getMultiplicateur()%></td>
+              <td><a href="/updateFormFonction/<%=personnel.getId()%>" class="btn btn-dark"><i class="mdi mdi-pen"></i></a></td>
+
+
             </tr>
             <% } %>
             </tbody>

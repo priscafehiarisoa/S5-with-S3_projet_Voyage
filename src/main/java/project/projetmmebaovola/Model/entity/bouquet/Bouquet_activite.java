@@ -11,7 +11,7 @@ import java.util.List;
  * etat = -10 => veux dire que l'activite a été supprimé du bouquet
  * */
 
-@Entity
+//@Entity
 public class Bouquet_activite {
 
     @Id

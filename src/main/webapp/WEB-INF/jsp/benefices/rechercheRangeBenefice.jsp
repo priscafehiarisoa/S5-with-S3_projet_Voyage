@@ -20,16 +20,23 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">liste des voyages </h4>
+            <h4 class="card-title">liste des bénéfices de chaque voyage voyages </h4>
             <div class="form-group">
                 <form action="getListBenefices"  method="post">
-                    <label >debut </label>
-                    <input type="number"  class="form-control " name="prix1" required>
-                    <br>
-                    <label> fin</label>
-                    <input type="number" class="form-control"  name="prix2" required>
-                    <button type="submit" class="btn btn-primary me-2">Valider</button>
 
+                    <div class="row">
+                        <div class="col-5">
+                            <label >prix 1 </label>
+                            <input type="number"  class="form-control " name="prix1" required>
+                        </div>
+                        <div class="col-5">
+                            <label> prix 2</label>
+                            <input type="number" class="form-control"  name="prix2" required>
+                        </div>
+                        <div class="col-2 mt-3">
+                            <button type="submit" class="btn btn-primary me-2">Valider</button>
+                        </div>
+                    </div>
                 </form>
             </div>
             <div>

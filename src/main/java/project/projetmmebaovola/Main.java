@@ -3,6 +3,7 @@ package project.projetmmebaovola;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import project.projetmmebaovola.Model.entity.Stat;
 import project.projetmmebaovola.Model.entity.activite.Activite;
 import project.projetmmebaovola.Model.entity.activite.CateorieActivite;
 import project.projetmmebaovola.Model.entity.bouquet.Bouquets;
@@ -20,6 +21,11 @@ import java.util.Optional;
 public class Main {
 
 
+    private final VenteVoyageRepository venteVoyageRepository;
+
+    public Main(VenteVoyageRepository venteVoyageRepository) {
+        this.venteVoyageRepository = venteVoyageRepository;
+    }
 
     @Bean
     CommandLineRunner commandLineRunner (ActiviteRepository activiteRepository,
@@ -95,6 +101,18 @@ public class Main {
             System.out.println(fonctionsRepository.getFonctionByAnneeTravail(3).get());;
 
 //            mouvementStockActiviteRepository.getResteStock().forEach(System.out::println);
+
+            List<Object[]> listobject = venteVoyageRepository.getStatistique(1);
+            List<Voyage> listeVoyage= voyageRepository.getVoyageByEtat(0);
+            System.out.println("**");
+            Stat stat= new Stat().getFromListObject(listobject,new Voyage());
+            System.out.println(stat);
+            System.out.println("--");
+            listobject.forEach(System.out::println);
+            for (int i = 0; i < listobject.size(); i++) {
+                System.out.println(String.valueOf(listobject.get(i)[1]));
+            }
+
 
         };
 

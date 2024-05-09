@@ -11,6 +11,7 @@ public class TypeMainOeuvre {
     private String nomMainD_oeuvre;
     private double tauxHoraire;
     private double tauxJournalier;
+    private int heureDeTravail;
 
     public double getTauxJournalier() {
         return tauxJournalier;
@@ -20,7 +21,6 @@ public class TypeMainOeuvre {
         this.tauxJournalier = tauxJournalier;
     }
 
-    private int heureDeTravail;
     public String getNomMainD_oeuvre() {
         return nomMainD_oeuvre;
     }
